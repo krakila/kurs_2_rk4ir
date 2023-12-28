@@ -358,7 +358,99 @@ footer {
   width: 40px;
   height: 40px;
 }
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
 
+.header-logo img {
+    flex-shrink: 0;
+    width: 10%;
+    height: 10%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+@keyframes rainbow-text-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.header-title {
+
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-text-animation 5s ease infinite;
+    background-size: 200% auto;
+}
+
+.po {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 10px;
+}
+@media (max-width: 1024px) {
+  .po {
+    grid-template-columns: none;
+    grid-template-areas:
+      "logo"
+      "title"
+      "disney";
+  }
+  .header-logo {
+    grid-area: logo;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .header-title {
+    grid-area: title;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .zag {
+    grid-area: disney;
+  }
+}
+
+@media (max-width: 480px) {
+  .po {
+    grid-template-columns: none;
+    grid-template-areas:
+      "logo"
+      "title"
+      "disney";
+  }
+
+  .header-logo {
+    grid-area: logo;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .header-title {
+    grid-area: title;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .zag {
+    grid-area: disney;
+  }
+}
 
 
   </style>
@@ -366,8 +458,17 @@ footer {
 <body>
 
 <header>
-  <img class ="positionabs" src="https://sun6-23.userapi.com/s/v1/if2/ElkTl-nb27QNee8hGBNJSl3N8cKSvR6koop67QP6fdnpGf14yq2y5CqtR_ezIhfRjqFN3fmXogumNbO0Wuszr8uJ.jpg?size=1536x1536&quality=96&crop=264,0,1536,1536&ava=1" alt="Логотип" width="100" height="100">
-  <h1>Герои Дисней</h1>
+  <div class="po">
+    <div class="header-logo">
+      <img src="https://sun6-23.userapi.com/s/v1/if2/ElkTl-nb27QNee8hGBNJSl3N8cKSvR6koop67QP6fdnpGf14yq2y5CqtR_ezIhfRjqFN3fmXogumNbO0Wuszr8uJ.jpg?size=1536x1536&quality=96&crop=264,0,1536,1536&ava=1" alt="Логотип Disney">
+      <div class="header-title">
+        <h1>DisneyOver</h1>
+      </div>
+    </div>
+    <div class="zag">
+      <h1>Герои Дисней</h1>
+    </div>
+  </div>
 </header>
 <nav>
   <a href="disney.html">Главная</a>
